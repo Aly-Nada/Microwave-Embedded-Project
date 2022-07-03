@@ -1,0 +1,81 @@
+
+Call graph (*** = already visited):
+
+  Uncalled:
+  0 GPIOF_Handler [48]
+    8 Status [40]
+      32 TimerDisable [0]
+      32 UART0_Send [16]
+        48 UART0_Tx [0]
+      32 UART0_Tx [0] ***
+    8 TimerEnable [0]
+
+  Uncalled:
+  0 Timer0Handle [64]
+    24 Status [40] ***
+    24 TimerDisable [0] ***
+    24 TimerIntClear [0]
+
+  Uncalled:
+  0 UART0_Handler [48]
+    8 Status [40] ***
+
+  Program entry:
+  0 __iar_program_start [52]
+    0 __cmain [52]
+      0 __iar_data_init3 [16]
+        8 __iar_zero_init3 [8]
+          16 - [0]
+        8 __iar_copy_init3 [8]
+          16 - [0]
+      0 __low_level_init [0]
+      0 main [52]
+        8 IntMasterEnable [8]
+          16 CPUcpsie [0]
+        8 PORTFInit [44]
+          16 GPIOIntRegister [36]
+            32 _GPIOIntNumberGet (gpio.o(driverlib.a)) [8]
+              40 - [0]
+            32 IntRegister [20]
+              52 - [0]
+            16 IntEnable [0]
+        8 SysCtlSleep [0]
+          8 CPUwfi [0]
+        8 Timer0AInit [44]
+          16 IntEnable [0] ***
+          16 SysCtlPeripheralEnable [0]
+          16 TimerConfigure [12]
+            28 - [0]
+          16 TimerControlStall [0]
+          16 TimerDisable [0] ***
+          16 TimerIntEnable [0]
+          16 TimerIntRegister [36]
+            32 _TimerIntNumberGet (timer.o(driverlib.a)) [12]
+              44 - [0]
+            16 IntEnable [0] ***
+            32 IntRegister [20] ***
+          16 TimerLoadSet [0]
+        8 UART0Init [44]
+          16 UARTIntRegister [36]
+            32 _UARTIntNumberGet (uart.o(driverlib.a)) [0]
+            16 IntEnable [0] ***
+            32 IntRegister [20] ***
+      0 exit [8]
+        0 _exit [8]
+          0 __exit [8]
+            8 - [0]
+    0 __iar_init_vfp [0]
+
+  interrupt:
+  0 __default_handler (vector_table_M.o(rt7M_tl.a)) [0]
+
+
+
+Veneer stats:
+
+  34 definitions
+  72 references
+     67 R_ARM_THM_CALL
+      5 R_ARM_THM_JUMP24
+   0 veneers               0 bytes
+   0 redirected references

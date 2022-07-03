@@ -1,0 +1,393 @@
+###############################################################################
+#
+# IAR ELF Linker V8.40.1.212/W32 for ARM                  17/Jun/2020  03:35:45
+# Copyright 2007-2019 IAR Systems AB.
+#
+#    Output file  =
+#        C:\Users\li-lo\Desktop\Empedded
+#        sys\CSE318\Microwave_Project\Debug\Exe\Microwave.out
+#    Map file     =
+#        C:\Users\li-lo\Desktop\Empedded
+#        sys\CSE318\Microwave_Project\Debug\List\Microwave.map
+#    Command line =
+#        -f C:\Users\li-lo\AppData\Local\Temp\EWF4C6.tmp
+#        ("C:\Users\li-lo\Desktop\Empedded
+#        sys\CSE318\Microwave_Project\Debug\Obj\GPIOF.o"
+#        "C:\Users\li-lo\Desktop\Empedded
+#        sys\CSE318\Microwave_Project\Debug\Obj\main.o"
+#        "C:\Users\li-lo\Desktop\Empedded
+#        sys\CSE318\Microwave_Project\Debug\Obj\Microwave.o"
+#        "C:\Users\li-lo\Desktop\Empedded
+#        sys\CSE318\Microwave_Project\Debug\Obj\Timer0.o"
+#        "C:\Users\li-lo\Desktop\Empedded
+#        sys\CSE318\Microwave_Project\Debug\Obj\UART.o" --no_out_extension -o
+#        "C:\Users\li-lo\Desktop\Empedded
+#        sys\CSE318\Microwave_Project\Debug\Exe\Microwave.out" --redirect
+#        _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb --map
+#        "C:\Users\li-lo\Desktop\Empedded
+#        sys\CSE318\Microwave_Project\Debug\List\Microwave.map" --log
+#        veneers,call_graph --log_file "C:\Users\li-lo\Desktop\Empedded
+#        sys\CSE318\Microwave_Project\Debug\List\Microwave.log" --config
+#        "C:\Program Files (x86)\IAR Systems\Embedded Workbench
+#        8.3\arm\config\linker\TexasInstruments\TM4C123GE6.icf" --semihosting
+#        C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\ewarm\Exe\driverlib.a
+#        --entry __iar_program_start --vfe --enable_stack_usage --text_out
+#        locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** MESSAGES
+***
+
+Warning[Lt009]: Inconsistent wchar_t size
+            gpio.o(driverlib.a) and 5 other objects in driverlib.a have wchar_t
+                      size 16 bits
+            GPIOF.o and 17 other objects, some of them in dl7M_tln.a and 11
+                      other libraries have wchar_t size 32 bits
+Warning[Ls015]: [stack usage analysis] at least one function appears to be
+          uncalled. Example: "GPIOF_Handler". A complete list of uncalled
+          functions is in the map file.
+
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because no calls to memory allocation
+functions were found in the application outside of system library
+functions, and there are calls to deallocation functions in the
+application.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x0 { ro section .intvec };
+"P1":  place in [from 0x0 to 0x1'ffff] { ro };
+define block CSTACK with size = 4K, alignment = 8 { };
+define block HEAP with size = 8K, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2000'7fff] {
+          rw, block CSTACK, block HEAP };
+initialize by copy { rw };
+
+  Section            Kind         Address    Size  Object
+  -------            ----         -------    ----  ------
+"A0":                                        0x40
+  .intvec            ro code          0x0    0x40  vector_table_M.o [5]
+                                   - 0x40    0x40
+
+"P1":                                       0xd3c
+  .text              ro code         0x40   0x430  Microwave.o [1]
+  .text              ro code        0x470    0xe8  UART.o [1]
+  .text              ro code        0x558   0x1b4  timer.o [3]
+  .text              ro code        0x70c    0xdc  uart.o [3]
+  .text              ro code        0x7e8    0xb0  interrupt.o [3]
+  .text              ro code        0x898     0xc  cpu.o [3]
+  .text              ro code        0x8a4   0x200  gpio.o [3]
+  .text              ro code        0xaa4    0xbc  GPIOF.o [1]
+  .text              ro code        0xb60    0x58  Timer0.o [1]
+  .text              ro code        0xbb8    0x24  sysctl.o [3]
+  .text              ro code        0xbdc    0x3a  zero_init3.o [5]
+  .text              ro code        0xc16    0x2e  copy_init3.o [5]
+  .text              ro code        0xc44    0x28  data_init.o [5]
+  .text              ro code        0xc6c    0x22  fpinit_M.o [4]
+  .iar.init_table    const          0xc90    0x24  - Linker created -
+  .text              ro code        0xcb4     0x2  vector_table_M.o [5]
+  .text              ro code        0xcb8    0x1e  cmain.o [5]
+  .text              ro code        0xcd6     0x4  low_level_init.o [2]
+  .text              ro code        0xcda    0x18  main.o [1]
+  .text              ro code        0xcf2     0x4  exit.o [2]
+  .text              ro code        0xcf8     0xa  cexit.o [5]
+  .text              ro code        0xd04    0x14  exit.o [6]
+  .rodata            const          0xd18    0x14  Microwave.o [1]
+  .rodata            const          0xd2c    0x14  Microwave.o [1]
+  .rodata            const          0xd40    0x10  Microwave.o [1]
+  .rodata            const          0xd50     0xc  Microwave.o [1]
+  .text              ro code        0xd5c     0xc  cstartup_M.o [5]
+  .rodata            const          0xd68     0x8  Microwave.o [1]
+  .rodata            const          0xd70     0x8  Microwave.o [1]
+  Initializer bytes  const          0xd78     0x4  <for P2-1>
+  .rodata            const          0xd7c     0x0  zero_init3.o [5]
+  .rodata            const          0xd7c     0x0  copy_init3.o [5]
+                                  - 0xd7c   0xd3c
+
+"P2", part 1 of 3:                            0x4
+  P2-1                        0x2000'0000     0x3  <Init block>
+    .data            inited   0x2000'0000     0x1  Microwave.o [1]
+    .data            inited   0x2000'0001     0x1  Microwave.o [1]
+    .data            inited   0x2000'0002     0x1  Microwave.o [1]
+                            - 0x2000'0003     0x3
+
+"P2", part 2 of 3:                          0x680
+  VTABLE             zero     0x2000'0400   0x26c  interrupt.o [3]
+  .bss               zero     0x2000'066c     0x4  Microwave.o [1]
+  .bss               zero     0x2000'0670     0x4  Microwave.o [1]
+  .bss               zero     0x2000'0674     0x4  Microwave.o [1]
+  .bss               zero     0x2000'0678     0x4  Microwave.o [1]
+  .bss               zero     0x2000'067c     0x1  Microwave.o [1]
+  .bss               zero     0x2000'067d     0x1  Microwave.o [1]
+  .bss               zero     0x2000'067e     0x1  Microwave.o [1]
+  .bss               zero     0x2000'067f     0x1  Microwave.o [1]
+  .bss               zero     0x2000'0680     0x1  Microwave.o [1]
+                            - 0x2000'0681   0x67d
+
+"P2", part 3 of 3:                         0x1000
+  CSTACK                      0x2000'0688  0x1000  <Block>
+    CSTACK           uninit   0x2000'0688  0x1000  <Block tail>
+                            - 0x2000'1688  0x1000
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+        0xd7c     0x1'ffff  0x1'f284
+  0x2000'0684  0x2000'0687       0x4
+  0x2000'1688  0x2000'7fff    0x6978
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x281:
+          0x2000'0400  0x281
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x4 (133% of destination):
+                0xd78    0x4
+    1 destination range, total size 0x3:
+          0x2000'0000    0x3
+
+
+*******************************************************************************
+*** STACK USAGE
+***
+
+  Call Graph Root Category  Max Use  Total Use
+  ------------------------  -------  ---------
+  interrupt                      0          0
+  Program entry                 52         52
+  Uncalled function             64        160
+
+
+Program entry
+  "__iar_program_start": 0xd5d
+
+  Maximum call chain                               52  bytes
+
+    "__iar_program_start"                           0
+    "__cmain"                                       0
+    "main"                                          8
+    "PORTFInit"                                     8
+    "GPIOIntRegister"                              16
+    "IntRegister"                                  20
+
+interrupt
+  "__default_handler" in vector_table_M.o [5]: 0xcb5
+
+  Maximum call chain                                0  bytes
+
+    "__default_handler" in vector_table_M.o [5]     0
+
+Uncalled function
+  "GPIOF_Handler": 0x315
+
+  Maximum call chain                               48  bytes
+
+    "GPIOF_Handler"                                 8
+    "Status"                                       24
+    "UART0_Send"                                   16
+    "UART0_Tx"                                      0
+
+Uncalled function
+  "Timer0Handle": 0x379
+
+  Maximum call chain                               64  bytes
+
+    "Timer0Handle"                                 24
+    "Status"                                       24
+    "UART0_Send"                                   16
+    "UART0_Tx"                                      0
+
+Uncalled function
+  "UART0_Handler": 0x265
+
+  Maximum call chain                               48  bytes
+
+    "UART0_Handler"                                 8
+    "Status"                                       24
+    "UART0_Send"                                   16
+    "UART0_Tx"                                      0
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module            ro code  ro data  rw data
+    ------            -------  -------  -------
+command line/config:
+    -------------------------------------------
+    Total:
+
+C:\Users\li-lo\Desktop\Empedded sys\CSE318\Microwave_Project\Debug\Obj: [1]
+    GPIOF.o               188
+    Microwave.o         1'072       87       24
+    Timer0.o               88
+    UART.o                232
+    main.o                 24
+    -------------------------------------------
+    Total:              1'604       87       24
+
+dl7M_tln.a: [2]
+    exit.o                  4
+    low_level_init.o        4
+    -------------------------------------------
+    Total:                  8
+
+driverlib.a: [3]
+    cpu.o                  12
+    gpio.o                512
+    interrupt.o           176               620
+    sysctl.o               36
+    timer.o               436
+    uart.o                220
+    -------------------------------------------
+    Total:              1'392               620
+
+m7M_tls.a: [4]
+    fpinit_M.o             34
+    -------------------------------------------
+    Total:                 34
+
+rt7M_tl.a: [5]
+    cexit.o                10
+    cmain.o                30
+    copy_init3.o           46
+    cstartup_M.o           12
+    data_init.o            40
+    vector_table_M.o       66
+    zero_init3.o           58
+    -------------------------------------------
+    Total:                262
+
+shb_l.a: [6]
+    exit.o                 20
+    -------------------------------------------
+    Total:                 20
+
+    Gaps                    6        2    1'020
+    Linker created                  37    4'096
+-----------------------------------------------
+    Grand Total:        3'326      126    5'760
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.iar.init_table$$Base         0xc90          --   Gb  - Linker created -
+.iar.init_table$$Limit        0xcb4          --   Gb  - Linker created -
+?main                         0xcb9         Code  Gb  cmain.o [5]
+BlinkingCounter         0x2000'067d    0x1  Data  Gb  Microwave.o [1]
+CPUcpsie                      0x899    0x8  Code  Gb  cpu.o [3]
+CPUwfi                        0x8a1    0x4  Code  Gb  cpu.o [3]
+CSTACK$$Base            0x2000'0688          --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'1688          --   Gb  - Linker created -
+GPIOF_Handler                 0x315   0x64  Code  Gb  Microwave.o [1]
+GPIOIntRegister               0x8e5   0x14  Code  Gb  gpio.o [3]
+IntEnable                     0x81f   0x56  Code  Gb  interrupt.o [3]
+IntMasterEnable               0x7e9    0x8  Code  Gb  interrupt.o [3]
+IntRegister                   0x7f9   0x26  Code  Gb  interrupt.o [3]
+PORTFInit                     0xaa5   0xbc  Code  Gb  GPIOF.o [1]
+ProcessEndFlag          0x2000'0002    0x1  Data  Gb  Microwave.o [1]
+Region$$Table$$Base           0xc90          --   Gb  - Linker created -
+Region$$Table$$Limit          0xcb4          --   Gb  - Linker created -
+Status                         0x41  0x224  Code  Gb  Microwave.o [1]
+StatusFlag              0x2000'0000    0x1  Data  Gb  Microwave.o [1]
+StopFlag                0x2000'0001    0x1  Data  Gb  Microwave.o [1]
+StoppingCounter         0x2000'067f    0x1  Data  Gb  Microwave.o [1]
+SysCtlPeripheralEnable        0xbb9    0x8  Code  Gb  sysctl.o [3]
+SysCtlSleep                   0xbd5    0x4  Code  Gb  sysctl.o [3]
+Timer0AInit                   0xb61   0x58  Code  Gb  Timer0.o [1]
+Timer0Handle                  0x379   0x94  Code  Gb  Microwave.o [1]
+TimerConfigure                0x5b3   0x52  Code  Gb  timer.o [3]
+TimerControlStall             0x615   0x18  Code  Gb  timer.o [3]
+TimerDisable                  0x5a7    0xc  Code  Gb  timer.o [3]
+TimerEnable                   0x59b    0xc  Code  Gb  timer.o [3]
+TimerIntClear                 0x669    0x4  Code  Gb  timer.o [3]
+TimerIntEnable                0x657    0x4  Code  Gb  timer.o [3]
+TimerIntRegister              0x63d   0x1a  Code  Gb  timer.o [3]
+TimerLoadSet                  0x62d   0x10  Code  Gb  timer.o [3]
+UART0Init                     0x471   0x78  Code  Gb  UART.o [1]
+UART0_Handler                 0x265   0xa8  Code  Gb  Microwave.o [1]
+UART0_Send                    0x539   0x20  Code  Gb  UART.o [1]
+UART0_Tx                      0x4e9   0x10  Code  Gb  UART.o [1]
+UARTIntRegister               0x74d   0x1a  Code  Gb  uart.o [3]
+_GPIOIntNumberGet             0x8a5   0x40  Code  Lc  gpio.o [3]
+_TimerIntNumberGet            0x559   0x42  Code  Lc  timer.o [3]
+_UARTIntNumberGet             0x70d   0x32  Code  Lc  uart.o [3]
+__cmain                       0xcb9         Code  Gb  cmain.o [5]
+__exit                        0xd05   0x14  Code  Gb  exit.o [6]
+__iar_copy_init3              0xc17   0x2e  Code  Gb  copy_init3.o [5]
+__iar_data_init3              0xc45   0x28  Code  Gb  data_init.o [5]
+__iar_init_vfp                0xc6d         Code  Gb  fpinit_M.o [4]
+__iar_program_start           0xd5d         Code  Gb  cstartup_M.o [5]
+__iar_zero_init3              0xbdd   0x3a  Code  Gb  zero_init3.o [5]
+__low_level_init              0xcd7    0x4  Code  Gb  low_level_init.o [2]
+__vector_table                  0x0         Data  Gb  vector_table_M.o [5]
+_call_main                    0xcc5         Code  Gb  cmain.o [5]
+_exit                         0xcf9         Code  Gb  cexit.o [5]
+_main                         0xcd3         Code  Gb  cmain.o [5]
+command                 0x2000'067c    0x1  Data  Gb  Microwave.o [1]
+exit                          0xcf3    0x4  Code  Gb  exit.o [2]
+g_pfnRAMVectors         0x2000'0400  0x26c  Data  Lc  interrupt.o [3]
+g_ppui32GPIOIntMapBlizzard
+                              0x90c   0xc0  Data  Lc  gpio.o [3]
+g_ppui32GPIOIntMapSnowflake
+                              0x9cc   0xd8  Data  Lc  gpio.o [3]
+g_ppui32TimerIntMap           0x66c   0x60  Data  Lc  timer.o [3]
+g_ppui32TimerIntMapSnowflake
+                              0x6cc   0x40  Data  Lc  timer.o [3]
+g_ppui32UARTIntMap            0x768   0x40  Data  Lc  uart.o [3]
+g_ppui32UARTIntMapSnowflake
+                              0x7a8   0x40  Data  Lc  uart.o [3]
+g_pui32EnRegs                 0x884   0x14  Data  Lc  interrupt.o [3]
+hours                   0x2000'0670    0x4  Data  Gb  Microwave.o [1]
+main                          0xcdb   0x18  Code  Gb  main.o [1]
+minutes                 0x2000'0674    0x4  Data  Gb  Microwave.o [1]
+mode                    0x2000'067e    0x1  Data  Gb  Microwave.o [1]
+process                 0x2000'0680    0x1  Data  Gb  Microwave.o [1]
+seconds                 0x2000'0678    0x4  Data  Gb  Microwave.o [1]
+time                    0x2000'066c    0x4  Data  Gb  Microwave.o [1]
+
+
+[1] = C:\Users\li-lo\Desktop\Empedded sys\CSE318\Microwave_Project\Debug\Obj
+[2] = dl7M_tln.a
+[3] = driverlib.a
+[4] = m7M_tls.a
+[5] = rt7M_tl.a
+[6] = shb_l.a
+
+  3'326 bytes of readonly  code memory
+    126 bytes of readonly  data memory
+  5'760 bytes of readwrite data memory
+
+Errors: none
+Warnings: 2

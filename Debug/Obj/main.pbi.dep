@@ -1,0 +1,18 @@
+main.pbi: \
+  C:\Users\li-lo\Desktop\Empedded\ sys\CSE318\Microwave_Project\Microwave.h \
+  C:\Users\li-lo\Desktop\Empedded\ sys\CSE318\Microwave_Project\GPIOF.h \
+  C:\Users\li-lo\Desktop\Empedded\ sys\CSE318\Microwave_Project\UART.h \
+  C:\Users\li-lo\Desktop\Empedded\ sys\CSE318\Microwave_Project\Timer0.h \
+  C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\uart.h \
+  C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\gpio.h \
+  C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\timer.h \
+  C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\sysctl.h \
+  C:\ti\TivaWare_C_Series-2.1.4.178\driverlib\interrupt.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\stdbool.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Product.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Defaults.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\yvals.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\ycheck.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\stdint.h \
+  C:\Users\li-lo\Desktop\Empedded\ sys\CSE318\Microwave_Project\tm4c123gh6pm.h \
+  C:\Users\li-lo\Desktop\Empedded\ sys\CSE318\Microwave_Project\main.c
